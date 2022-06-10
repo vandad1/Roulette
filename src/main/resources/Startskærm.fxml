@@ -37,8 +37,6 @@
          <Button layoutX="522.0" layoutY="369.0" mnemonicParsing="false" text="Join the table" />
       </children>
 
-
-
 </AnchorPane>
 
 </Scene>
