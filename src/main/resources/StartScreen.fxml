@@ -5,15 +5,16 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StartScreenController">
+<TabPane fx:id="TabPaneStartScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StartScreenController">
   <tabs>
-    <Tab text="Untitled Tab 1">
+    <Tab text="StartScreen">
          <content>
             <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="490.0" prefWidth="900.0">
                <children>
@@ -37,15 +38,19 @@
                         <Font size="17.0" />
                      </font>
                   </CheckBox>
-                  <Button fx:id="ButtonRulesOpen" layoutX="360.0" layoutY="369.0" mnemonicParsing="false"  prefHeight="26.0" prefWidth="75.0" text="Rules"/>
-                  <Button fx:id="ButtonJoinTable" layoutX="480.0" layoutY="369.0" mnemonicParsing="false"  text="Join the table"/>
+                  <Button fx:id="ButtonOpenRules" layoutX="360.0" layoutY="369.0" mnemonicParsing="false" onAction="#OpenRulesEvent" prefHeight="26.0" prefWidth="75.0" text="Rules" />
+                  <Button fx:id="ButtonJoinTable" layoutX="480.0" layoutY="369.0" mnemonicParsing="false" text="Join the table" />
                </children>
             </AnchorPane>
          </content>
     </Tab>
-    <Tab text="Untitled Tab 2">
+    <Tab text="Rules">
       <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextArea layoutX="303.0" layoutY="112.0" prefHeight="200.0" prefWidth="200.0" text="This is just here as a place holder&#10;&#10;so you can just fuck off you lil cunt" />
+                  <Button fx:id="ButtonCloseRules" layoutX="67.0" layoutY="42.0" mnemonicParsing="false" onAction="#CloseRulesEvent" text="Button" />
+               </children></AnchorPane>
       </content>
     </Tab>
   </tabs>
