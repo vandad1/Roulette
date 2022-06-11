@@ -1,40 +1,50 @@
+import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import static javafx.application.Application.launch;
 
-public class Main {
+
+public class Main extends Application {
 
     public static Stage stage;
-    public static Scene loginScene;
-    public static Scene scheduleScene;
-    //public static LoginController loginController;
+    public static Scene startScreenScene;
+    public static Scene gameScene;
+    public static StartScreenController startScreenController;
+    public static GameController gameController;
 
     public static void main(String[] args) {
         launch();
     }
 
 
+    @Override
     public void start(Stage stage) throws Exception {
+
+        //System.out.println(getClass().getResource("Game.fxml"));
+        //System.out.println(getClass().getResource("StartScreen.fxml"));
 
         Main.stage = stage;
 
-        FXMLLoader loginLoader = new FXMLLoader(getClass().getResource("../FXML/Startskærm.fxml"));
-        Parent loginView = loginLoader.load();
-        //loginController = loginLoader.getController();
+        FXMLLoader startScreenLoader = new FXMLLoader(getClass().getResource("StartScreen.fxml"));
+        Parent startScreenView = startScreenLoader.load();
+        startScreenController = startScreenLoader.getController();
 
-        //FXMLLoader scheduleLoader = new FXMLLoader(getClass().getResource("../FXML/SchedulePage.fxml"));
-        //Parent scheduleView = scheduleLoader.load();
-        //scheduleController = scheduleLoader.getController();
+      //  FXMLLoader gameLoader = new FXMLLoader(getClass().getResource("Game.fxml"));
+      //  Parent gameView = gameLoader.load();
+      // gameController = gameLoader.getController();
 
-        //loginScene = new Scene(loginView, 600, 450);
-        //scheduleScene = new Scene(scheduleView, 600, 450);
+        startScreenScene = new Scene(startScreenView, 530, 900);
+        //gameScene = new Scene(gameView, 900, 516);
 
-        //loginScene.getStylesheets().add("resources/invisible-tab-pane.css");
-        //scheduleScene.getStylesheets().add("resources/invisible-tab-pane.css");
+        startScreenScene.getStylesheets().add("invisible-tab-pane.css");
+      //  GameScene.getStylesheets().add("resources/invisible-tab-pane.css");
 
+        stage.setTitle("Roskilde");
+        stage.setScene(startScreenScene);
+        stage.setMinHeight(530);
+        stage.setMinWidth(900);
         stage.show();
     }
 
