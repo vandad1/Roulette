@@ -39,7 +39,7 @@
                      </font>
                   </CheckBox>
                   <Button fx:id="ButtonOpenRules" layoutX="360.0" layoutY="369.0" mnemonicParsing="false" onAction="#OpenRulesEvent" prefHeight="26.0" prefWidth="75.0" text="Rules" />
-                  <Button fx:id="ButtonJoinTable" layoutX="480.0" layoutY="369.0" mnemonicParsing="false" text="Join the table" />
+                  <Button fx:id="ButtonJoinTable" layoutX="480.0" layoutY="369.0" mnemonicParsing="false" onAction="#JoinTableEvent" text="Join the table" />
                </children>
             </AnchorPane>
          </content>

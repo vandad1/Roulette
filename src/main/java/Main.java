@@ -31,19 +31,19 @@ public class Main extends Application {
         Parent startScreenView = startScreenLoader.load();
         startScreenController = startScreenLoader.getController();
 
-      //  FXMLLoader gameLoader = new FXMLLoader(getClass().getResource("Game.fxml"));
-      //  Parent gameView = gameLoader.load();
-      // gameController = gameLoader.getController();
+        FXMLLoader gameLoader = new FXMLLoader(getClass().getResource("Game.fxml"));
+        Parent gameView = gameLoader.load();
+        gameController = gameLoader.getController();
 
         startScreenScene = new Scene(startScreenView, 530, 900);
-        //gameScene = new Scene(gameView, 900, 516);
+        gameScene = new Scene(gameView, 900, 516);
 
         startScreenScene.getStylesheets().add("invisible-tab-pane.css");
-      //  GameScene.getStylesheets().add("resources/invisible-tab-pane.css");
+        gameScene.getStylesheets().add("invisible-tab-pane.css");
 
-        stage.setTitle("Roskilde");
+        stage.setTitle("Roulette");
         stage.setScene(startScreenScene);
-        stage.setMinHeight(530);
+        stage.setMinHeight(567);
         stage.setMinWidth(900);
         stage.show();
     }
