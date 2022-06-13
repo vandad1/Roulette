@@ -1,12 +1,18 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.TabPane;
+import javafx.scene.control.*;
 
 public class StartScreenController {
 
     @FXML
     private TabPane TabPaneStartScreen;
+
+    @FXML
+    private CheckBox CheckBoxAgeAgreement;
+
+    @FXML
+    private Button ButtonJoinTable;
 
     public void OpenRulesEvent(ActionEvent actionEvent){
         TabPaneStartScreen.getSelectionModel().select(1);
@@ -17,6 +23,19 @@ public class StartScreenController {
     }
 
     public void JoinTableEvent( ActionEvent actionEvent){
-        Main.stage.setScene(Main.gameScene);
+        if (CheckBoxAgeAgreement.isSelected()){
+            Main.stage.setScene(Main.gameScene);
+            return;
+        }
+
+        ButtonJoinTable.accessibleHelpProperty().set("You need to be 18 years old to be able to play");
+        Dialog dialog = new Dialog<>();
+
+        dialog.setContentText("you have to be 18 years old to be abel to play");
+
+        ButtonType type = new ButtonType("ok", ButtonBar.ButtonData.OK_DONE);
+
+        dialog.getDialogPane().getButtonTypes().add(type);
+        dialog.show();
     }
 }
