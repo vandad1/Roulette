@@ -14,6 +14,9 @@ public class StartScreenController {
     @FXML
     private Button ButtonJoinTable;
 
+    @FXML
+    private TextField TextFieldName;
+
     public void OpenRulesEvent(ActionEvent actionEvent){
         TabPaneStartScreen.getSelectionModel().select(1);
     }
@@ -24,11 +27,11 @@ public class StartScreenController {
 
     public void JoinTableEvent( ActionEvent actionEvent){
         if (CheckBoxAgeAgreement.isSelected()){
+
             Main.stage.setScene(Main.gameScene);
             return;
         }
 
-        ButtonJoinTable.accessibleHelpProperty().set("You need to be 18 years old to be able to play");
         Dialog dialog = new Dialog<>();
 
         dialog.setContentText("you have to be 18 years old to be abel to play");
